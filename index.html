@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSA - Sombras do Asfalto</title>
+  <link rel="stylesheet" href="style/base.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<main>
+  <h1>Sombras do Asfalto</h1>
+  <section class="video-section">
+    <div class="video-lock">
+      <iframe 
+        width="100%" 
+        height="450" 
+        src="https://www.youtube.com/embed/QPZwL_zFHiY?autoplay=1&mute=1&loop=1&playlist=QPZwL_zFHiY&controls=0&disablekb=1&modestbranding=1&rel=0" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <div class="headline-container">
+    <div class="headline-badge">Inscrições Abertas</div>
+    <div class="headline-text">
+      <span>Garanta sua vaga para a 1ª Temporada!</span>
+      <a href="https://api.whatsapp.com/send?phone=5516999899572&text=Ol%C3%A1.+Gostaria+de+me+inscrever+na+CSA%21" 
+        target="_blank" 
+        class="btn-inscricao">
+        Inscreva-se <span class="btn-icon">→</span>
+      </a>
+    </div>
+  </div>
+
+  <section class="calendar-container">
+    <h1>CALENDAR</h1>
+    <div class="carousel-wrapper">
+      <button class="arrow left" onclick="scrollCarousel(-1)">&#9664;</button>
+      <div class="carousel" id="carousel">
+        </div>
+      <button class="arrow right" onclick="scrollCarousel(1)">&#9654;</button>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="components/header.js"></script>
+<script src="components/footer.js"></script>
+<script src="scripts/script_csa.js"></script>
+
+</body>
+</html>
