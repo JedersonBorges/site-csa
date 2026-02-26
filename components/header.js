@@ -20,8 +20,8 @@ document.getElementById("header").innerHTML = `
       <span class="dropdown">
         <a href="#">More</a>
         <span class="dropdown-content">
-          <a href="#">Contact</a>
-          <a href="#">Rules</a>
+          <a href="contact.html">Contact</a>
+          <a href="rules.html">Rules</a>
         </span>
       </span>
     </nav>
