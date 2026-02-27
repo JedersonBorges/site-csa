@@ -1116,10 +1116,6 @@ color: #fff;
 
 /* Head-to-head responsivo */
 @media (max-width: 768px) {
-  /* Esconde fotos dos pilotos */
-  .card-driver-picture {
-    display: none;
-  }
 
   /* Ajusta o layout dos cards */
   .headtohead-card .h2h-matchup {
