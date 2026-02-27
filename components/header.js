@@ -1,50 +1,36 @@
-// cria header
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const basePage = currentPage.replace(".html", "");
+
 document.getElementById("header").innerHTML = `
-<header>
-  <a href="/"><img src="logos/f1.png" alt="F1 Esports Logo" /></a>
-
-  <div class="menu-toggle" id="menuToggle">
-    ☰
-  </div>
-
-  <nav id="mainNav">
-    <a href="standings.html">Classificação</a>
-    <a href="drivers.html">Pilotos</a>
-    <a href="h2h.html">Head to head</a>
-    <a href="punicoes.html">Punições</a>
-    <a href="ranking.html">Ranking</a>
-
-    <span class="dropdown">
-      <a href="#" class="dropdown-toggle">More</a>
-      <span class="dropdown-content">
-        <a href="contact.html">Contact</a>
-        <a href="rules.html">Rules</a>
+  <header>
+    <a href="/"><img src="logos/f1.png" alt="F1 Esports Logo" class="logo" /></a>
+    
+    <button class="menu-toggle">☰</button>
+    
+    <nav class="nav-menu">
+      <a href="standings.html">Classificação</a>
+      <a href="drivers.html">Pilotos</a>
+      <a href="h2h.html">Head to head</a>
+      <a href="punicoes.html">Punições</a>
+      <a href="ranking.html">Ranking</a>
+      <span class="dropdown">
+        <a href="#">More</a>
+        <span class="dropdown-content">
+          <a href="contact.html">Contact</a>
+          <a href="rules.html">Rules</a>
+        </span>
       </span>
-    </span>
-  </nav>
-</header>
+    </nav>
+  </header>
 `;
 
-/* =========================
-   MENU MOBILE
-========================= */
+// Seleção correta dos elementos após a inserção no DOM
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
 
-const menuToggle = document.getElementById("menuToggle");
-const nav = document.getElementById("mainNav");
-
-menuToggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-
-/* =========================
-   DROPDOWN MOBILE
-========================= */
-
-const dropdownToggle = document.querySelector(".dropdown-toggle");
-
-dropdownToggle.addEventListener("click", function (e) {
-  if (window.innerWidth <= 900) {
-    e.preventDefault();
-    this.parentElement.classList.toggle("open");
-  }
-});
+if (menuToggle) {
+    menuToggle.onclick = function() {
+        navMenu.classList.toggle('active');
+        this.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+    };
+}
