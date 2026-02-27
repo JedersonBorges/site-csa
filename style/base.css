@@ -82,6 +82,73 @@ font-weight: bold;
 margin-top: 100px
 }
 
+/* ============================= */
+/* HEADER MOBILE */
+/* ============================= */
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+  header {
+    padding: 15px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+
+    background: var(--theme-header-footer-background);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.35s ease;
+    border-bottom: 1px solid var(--theme-color);
+  }
+
+  nav.active {
+    max-height: 500px;
+  }
+
+  nav a {
+    margin: 15px 0;
+    font-size: 16px;
+  }
+
+  /* dropdown mobile */
+  .dropdown-content {
+    position: static;
+    display: block;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .dropdown-content a {
+    background: none;
+    text-align: center;
+    width: auto;
+    padding: 8px;
+  }
+
+}
+
 /**************************************************************************/
 /* AJUSTES FOOTER */
 
@@ -413,9 +480,35 @@ text-align: left;
 background-color: rgb(0, 0, 0);
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-display: block;
+/* ============================= */
+/* DROPDOWN MOBILE FIX */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+  .dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: relative;   /* <<< ESSENCIAL */
+    display: none;
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    padding: 10px 0;
+    width: 100%;
+    background: #222;
+  }
+
 }
 
 /**************************************************************************/
@@ -1018,4 +1111,43 @@ color: #fff;
     transparent
   );
   margin: 35px 0;
+}
+
+
+/* Head-to-head responsivo */
+@media (max-width: 768px) {
+  /* Esconde fotos dos pilotos */
+  .card-driver-picture {
+    display: none;
+  }
+
+  /* Ajusta o layout dos cards */
+  .headtohead-card .h2h-matchup {
+    flex-direction: column !important; /* empilha verticalmente */
+    align-items: center;
+    gap: 8px;
+    margin: 10px auto !important;
+  }
+
+  /* Score centralizado e menor */
+  .h2h-score {
+    font-size: 24px !important;
+    margin: 8px 0 !important;
+  }
+
+  /* Piloto e bandeira lado a lado com gap menor */
+  .h2h-piloto {
+    justify-content: center !important;
+    gap: 4px;
+  }
+
+  /* Card compacto mobile */
+  .h2h-matchup.compacto {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    padding: 6px;
+  }
 }
