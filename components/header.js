@@ -17,7 +17,7 @@ document.getElementById("header").innerHTML = `
         <a href="#">Estatísticas</a>
         <span class="dropdown-content">
           <a href="drivers.html">Pilotos</a>
-          <a href="etapas.html">Etapas</a>
+          <a href="circuitos.html">Circuitos</a>
         </span>
       </span>
       <span class="dropdown">
