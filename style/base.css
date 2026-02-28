@@ -402,6 +402,7 @@ header {
 .dropdown {
     position: relative;
     text-align: center;
+    
 }
 
 .dropdown > a::after {
@@ -469,7 +470,7 @@ header {
 
     .nav-menu a {
         width: 100%;
-        padding: 15px;
+        padding: 8px;
         text-align: left;
     }
 
@@ -1086,4 +1087,274 @@ color: #fff;
     transparent
   );
   margin: 35px 0;
+}
+
+/***************************/
+
+/* ===========================
+   PAGE
+=========================== */
+
+.etapas-page{
+  max-width:1400px;
+  margin:auto;
+  padding:120px 20px 40px; /* 👈 espaço do header */
+}
+
+/* ===========================
+   LAYOUT
+=========================== */
+
+.etapas-layout{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:40px;
+}
+
+/* ===========================
+   MENU LATERAL
+=========================== */
+
+.etapas-menu{
+  background:var(--theme-card-background);
+  border-radius:14px;
+  padding:20px;
+  height:fit-content;
+  box-shadow:0 0 25px rgba(0,0,0,.4);
+}
+
+.etapas-menu h2{
+  font-family:'Orbitron';
+  font-size:18px;
+  margin-bottom:15px;
+  border-bottom:2px solid var(--theme-color);
+  padding-bottom:8px;
+}
+
+/* SCROLL BONITO */
+#tracksMenu{
+  max-height:70vh;
+  overflow-y:auto;
+}
+
+/* ===========================
+   BOTÃO CIRCUITO
+=========================== */
+
+.track-button{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.track-button:hover{
+  background:var(--theme-shadow);
+  transform:translateX(4px);
+}
+
+.track-button img{
+  width:34px;
+  border-radius:3px;
+}
+
+.track-button span{
+  font-weight:600;
+  letter-spacing:.5px;
+}
+
+/* ativo */
+.track-button.active{
+  background:linear-gradient(
+    90deg,
+    var(--theme-color),
+    transparent
+  );
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.etapas-content{
+  background:var(--theme-card-background);
+  border-radius:14px;
+  padding: 25px;
+  box-shadow:0 0 25px rgba(0,0,0,.4);
+}
+
+#trackTitle{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:'Orbitron';
+  font-size:32px;
+  margin:20px; /* ✅ remove espaço fantasma */
+}
+
+/* ===========================
+   TOP AREA
+=========================== */
+
+.track-top{
+  display:grid;
+  grid-template-columns:480px 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+#trackMap{
+  width:100%;
+  background:#0e0e14;
+  padding:20px;
+  border-radius:12px;
+}
+
+/* ===========================
+   INFO TABLE
+=========================== */
+
+.track-info table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.track-info td{
+  padding:12px;
+  border-bottom:1px solid #2b2b3a;
+}
+
+.track-info td:first-child{
+  color:#aaa;
+  font-weight:600;
+}
+
+/* ===========================
+   MAPA DO CIRCUITO
+=========================== */
+
+.track-top{
+  display:grid;
+  grid-template-columns:480px 1fr;
+  gap:60px; /* 👈 mais espaço entre mapa e infos */
+  align-items:center;
+}
+
+#trackMap{
+  width:100%;
+  background:#ffffff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+  transition:opacity .3s ease;
+}
+
+/* ===========================
+   HISTORY
+=========================== */
+
+.history-table{
+  width:100%;
+  margin-top:30px;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.history-table thead{
+  background:#1f1f2e;
+}
+
+.history-table th{
+  padding:14px;
+  font-family:'Orbitron';
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+.history-table td{
+  padding:12px;
+  border-bottom:1px solid #2a2a38;
+}
+
+.history-table tbody tr:hover{
+  background:#202030;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+#tracksMenu::-webkit-scrollbar{
+  width:6px;
+}
+
+#tracksMenu::-webkit-scrollbar-thumb{
+  background:var(--theme-color);
+  border-radius:10px;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:1000px){
+
+  .etapas-layout{
+    grid-template-columns:1fr;
+  }
+
+  .etapas-menu{
+    order:2;
+  }
+
+  .track-top{
+    grid-template-columns:1fr;
+  }
+
+  #trackTitle{
+    font-size:24px;
+  }
+
+}
+
+
+
+#trackTitle{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:'Orbitron';
+  font-size:32px;
+}
+
+.title-flag{
+  width:42px;
+  border-radius:4px;
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+
+.pilot-cell{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  white-space:nowrap;
+}
+
+.pilot-flag{
+  width:18px;
+  border-radius:2px;
+}
+
+.team-logo{
+  width:30px;
+  height:30px;
+}
+
+.pilot-name{
+  margin-top: 6px;
+  margin-left:1px;
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSA - Sombras do Asfalto</title>
+  <link rel="stylesheet" href="style/base.css">
+
+</head>
+<body>
+
+<div id="header"></div>
+
+<main class="etapas-page">
+
+  <div class="etapas-layout">
+
+    <!-- MENU DE CIRCUITOS -->
+    <aside class="etapas-menu">
+      <h2>Etapas</h2>
+      <div id="tracksMenu"></div>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <section class="etapas-content">
+
+      <h1 id="trackTitle">Selecione um circuito</h1>
+
+      <div class="track-top">
+        <img id="trackMap" src="" alt="">
+        
+        <div class="track-info">
+          <table>
+            <tr><td>Localização</td><td id="infoLocation">-</td></tr>
+            <tr><td>Voltas</td><td id="infoLaps">-</td></tr>
+            <tr><td>Percurso</td><td id="infoLength">-</td></tr>
+            <tr><td>Total</td><td id="infoDistance">-</td></tr>
+            <tr><td>Curvas</td><td id="infoCorners">-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <h2>Histórico</h2>
+
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Temporada</th>
+            <th>Etapa</th>
+            <th>Pole</th>
+            <th>🏆 Vencedor</th>
+            <th>🥈 2° Lugar</th>
+            <th>🥉 3° Lugar</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+
+    </section>
+
+  </div>
+
+</main>
+
+<div id="footer"></div>
+
+<script src="components/header.js"></script>
+<script src="components/footer.js"></script>
+<script src="scripts/script_csa.js"></script>
+<script src="scripts/tracks-data.js"></script>
+</body>
+</html>

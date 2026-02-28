@@ -9,10 +9,17 @@ document.getElementById("header").innerHTML = `
     
     <nav class="nav-menu">
       <a href="standings.html">Classificação</a>
-      <a href="drivers.html">Pilotos</a>
+      
       <a href="h2h.html">Head to head</a>
       <a href="punicoes.html">Punições</a>
       <a href="ranking.html">Ranking</a>
+      <span class="dropdown">
+        <a href="#">Estatísticas</a>
+        <span class="dropdown-content">
+          <a href="drivers.html">Pilotos</a>
+          <a href="etapas.html">Etapas</a>
+        </span>
+      </span>
       <span class="dropdown">
         <a href="#">More</a>
         <span class="dropdown-content">

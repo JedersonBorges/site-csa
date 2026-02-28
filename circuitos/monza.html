@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSA - Sombras do Asfalto</title>
+  <link rel="stylesheet" href="../style/base.css">
+
+</head>
+<body>
+
+<div id="header"></div>
+
+<main class="circuit-page">
+
+  <!-- HEADER DO CIRCUITO -->
+  <section class="circuit-hero">
+    <h1 id="circuitName">Circuito</h1>
+  </section>
+
+  <div class="circuit-container">
+
+    <!-- MAPA -->
+    <div class="circuit-map">
+      <img id="circuitMap" src="" alt="Mapa do circuito">
+    </div>
+
+    <!-- INFORMAÇÕES -->
+    <div class="circuit-info">
+      <h2>Informações do Circuito</h2>
+
+      <table>
+        <tr><td>Localização</td><td id="infoLocation">-</td></tr>
+        <tr><td>Voltas</td><td id="infoLaps">-</td></tr>
+        <tr><td>Percurso</td><td id="infoLength">-</td></tr>
+        <tr><td>Total</td><td id="infoDistance">-</td></tr>
+        <tr><td>Curvas</td><td id="infoCorners">-</td></tr>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- HISTÓRICO -->
+  <section class="circuit-history">
+    <h2>Histórico no Circuito</h2>
+
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Temporada</th>
+          <th>Round</th>
+          <th>Pole</th>
+          <th>🥇</th>
+          <th>🥈</th>
+          <th>🥉</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody"></tbody>
+    </table>
+
+  </section>
+
+</main>
+<div id="footer"></div>
+
+<script src="../components/header.js"></script>
+<script src="../components/footer.js"></script>
+<script src="../scripts/script_csa.js"></script>
+</body>
+</html>
