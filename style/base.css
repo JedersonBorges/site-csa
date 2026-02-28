@@ -226,6 +226,10 @@ vertical-align: middle;
 text-align: center; 
 }
 
+.tdHistory {
+  text-align: center;
+}
+
 th.date, td.date { width: 70px; }
 th.time, td.time { width: 90px; }
 th.circuit, td.circuit { width: 130px; }
@@ -1153,7 +1157,7 @@ color: #fff;
 
 .track-button:hover{
   background:var(--theme-shadow);
-  transform:translateX(4px);
+  
 }
 
 .track-button img{
@@ -1199,13 +1203,6 @@ color: #fff;
    TOP AREA
 =========================== */
 
-.track-top{
-  display:grid;
-  grid-template-columns:480px 1fr;
-  gap:40px;
-  align-items:center;
-}
-
 #trackMap{
   width:100%;
   background:#0e0e14;
@@ -1216,21 +1213,62 @@ color: #fff;
 /* ===========================
    INFO TABLE
 =========================== */
+/* ===========================
+   TRACK INFO TABLE FIX
+=========================== */
 
-.track-info table{
-  width:100%;
-  border-collapse:collapse;
+.track-info table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* 👈 faz as colunas terem largura fixa */
 }
 
-.track-info td{
-  padding:12px;
-  border-bottom:1px solid #2b2b3a;
+.track-info td {
+  padding: 12px;
+  border-bottom: 1px solid #2b2b3a;
+  white-space: nowrap; /* 👈 impede quebra de linha dentro da célula */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 👈 mostra "..." se o conteúdo for maior que a célula */
 }
 
-.track-info td:first-child{
-  color:#aaa;
-  font-weight:600;
+.track-info td:first-child {
+  width: 150px; /* largura fixa para os títulos */
+  color: #aaa;
+  font-weight: 600;
 }
+
+.track-info td:nth-child(2) {
+  width: calc(100% - 150px); /* o restante da tabela para os valores */
+  text-align: left;
+}
+
+.track-info img {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+@media(max-width:1000px){
+  .track-info table {
+    table-layout: auto; /* permite tabela se ajustar em telas pequenas */
+  }
+
+  .track-info td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .track-info img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 
 /* ===========================
    MAPA DO CIRCUITO
@@ -1240,7 +1278,7 @@ color: #fff;
   display:grid;
   grid-template-columns:480px 1fr;
   gap:60px; /* 👈 mais espaço entre mapa e infos */
-  align-items:center;
+  align-items:start;
 }
 
 #trackMap{
@@ -1281,7 +1319,8 @@ color: #fff;
 }
 
 .history-table tbody tr:hover{
-  background:#202030;
+  background:#555;
+  color: white;
 }
 
 /* ===========================
@@ -1298,27 +1337,56 @@ color: #fff;
 }
 
 /* ===========================
-   MOBILE
+   MOBILE CORRIGIDO
 =========================== */
 
 @media(max-width:1000px){
 
-  .etapas-layout{
-    grid-template-columns:1fr;
+  .etapas-layout {
+    display: flex;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    gap: 20px;
   }
 
-  .etapas-menu{
-    order:2;
+  .etapas-menu {
+    order: 1; /* Força o Menu a ser o PRIMEIRO item */
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .track-top{
-    grid-template-columns:1fr;
+  .etapas-content {
+    order: 2; /* Força o Conteúdo (Mapa/Infos) a ser o SEGUNDO item */
+    width: 100%;
+    padding: 15px;
   }
 
-  #trackTitle{
-    font-size:24px;
+  .track-top {
+    grid-template-columns: 1fr; /* Mapa em cima, tabela embaixo */
+    gap: 20px;
   }
 
+  #trackTitle {
+    font-size: 24px;
+    justify-content: center; /* Centraliza o título no mobile */
+  }
+
+  /* Ajuste para a tabela de info não quebrar layout */
+  .track-info td:first-child {
+    width: 120px;
+    font-size: 12px;
+  }
+  
+  .track-info td:nth-child(2) {
+    font-size: 13px;
+    flex-wrap: wrap; /* Se o nome do piloto + tempo for grande, quebra linha internamente */
+  }
+
+  /* Torna a tabela de histórico scrollável lateralmente para não quebrar o site */
+  .history-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
 
 
@@ -1357,4 +1425,26 @@ color: #fff;
 .pilot-name{
   margin-top: 6px;
   margin-left:1px;
+}
+
+
+
+
+/* Localize esta parte no seu CSS e atualize */
+.track-info td:nth-child(2) {
+  width: calc(100% - 150px);
+  text-align: left;
+  
+  /* Adicione as linhas abaixo */
+  display: flex;            /* Alinha os itens em linha */
+  align-items: center;      /* Centraliza verticalmente */
+  gap: 8px;                 /* Espaço entre o nome e o tempo */
+  overflow: visible;        /* Permite que o tempo apareça sem cortar */
+}
+
+/* Remova ou comente o white-space: nowrap se ele estiver atrapalhando o flex */
+.track-info td {
+  padding: 12px;
+  border-bottom: none
+  /* white-space: nowrap; <--- Se necessário, remova esta linha */
 }
