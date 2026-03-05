@@ -1458,7 +1458,6 @@ color: #fff;
   padding: 15px;
 }
 
-
 .category-switch {
   display: flex;
   align-items: center;
@@ -1577,6 +1576,25 @@ color: #fff;
   .mobile-tables {
     display: block;
   }
+
+  .etapas-page {
+    padding:120px 0px 0px 0px; /* 👈 espaço do header */
+    max-width: 400px;
+  }
+
+  
+#trackMap{
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+
+  background:#ffffff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+  transition:opacity .3s ease;
+}
+
 }
 
 
