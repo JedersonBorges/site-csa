@@ -12,50 +12,67 @@
 <div id="header"></div>
 
 <main>
-<h1> Temporada 1</h1>
+<div id="seasonTitle"></div>
 
-<div class="switch-container">
-  <span id="tabDrivers" class="active">Pilotos</span>
-  <span id="tabConstructors">Construtores</span>
-</div>
+<!-- ================= DESKTOP ================= -->
+<div class="desktop-tables">
 
-<table id="wikipediaStyleTable" class="wikipediaStyleTable" >
-  <thead><tr></tr></thead>
-  <tbody></tbody>
+  <div class="switch-container">
+    <span id="tabDrivers" class="active">Pilotos</span>
+    <span id="tabConstructors">Construtores</span>
+  </div>
+
+  <table id="wikipediaStyleTable" class="wikipediaStyleTable">
+    <thead><tr></tr></thead>
+    <tbody></tbody>
     <tfoot>
-    <tr>
-    <td colspan="34" style="padding: 8px; border-top: 2px solid #999; background-color: #f0f0f0; font-size: 13px; color: #333;">
-      <span style="margin-left:12px;"><sup style="font-size: 60%; font-weight: bold;">P</sup> Pole Position</span>
-      <span style="margin-left:12px;"><sup style="font-size: 60%; font-weight: bold;">F</sup> Fastest Lap</span>
-      <span style="margin-left:12px;"><sup style="font-size: 60%; font-weight: bold;">D</sup> Driver of the Day</span> 
-      <span style="margin-left:12px;"><sup style="font-size: 60%; font-weight: bold;">C</sup> Cleanest Driver</span> 
-    </td>
-  </tr>
-</tfoot>
-</table>
-
-  
+      <tr>
+        <td colspan="34" style="padding:8px;border-top:2px solid #999;background:#f0f0f0;font-size:13px;">
+          <span style="margin-left:12px;"><sup style="font-size:60%;font-weight:bold;">P</sup> Pole Position</span>
+          <span style="margin-left:12px;"><sup style="font-size:60%;font-weight:bold;">F</sup> Fastest Lap</span>
+          <span style="margin-left:12px;"><sup style="font-size:60%;font-weight:bold;">D</sup> Driver of the Day</span>
+          <span style="margin-left:12px;"><sup style="font-size:60%;font-weight:bold;">C</sup> Cleanest Driver</span>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
 
   <table id="tabelaEquipes" class="tabela-wikipedia">
-  <thead></thead>
-  <tbody></tbody>
-</table>
-<div id="centralizar">
-<p><strong>Sistema de pontuação</strong></p>
-<table id="pontuacaoTable" class="wikipediaStyleTable zero-margin">
-  <thead>
-    <tr></tr>
-  </thead>
-  <tbody></tbody>
-</table>
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="centralizar">
+    <p><strong>Sistema de pontuação</strong></p>
+    <table id="pontuacaoTable" class="wikipediaStyleTable zero-margin">
+      <thead><tr></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
 </div>
+
+
+<!-- ================= MOBILE ================= -->
+<div class="mobile-tables">
+
+  <div class="switch-container">
+    <span id="tabDriversMobile" class="active">Pilotos</span>
+    <span id="tabConstructorsMobile">Construtores</span>
+  </div>
+
+  <table id="tableCompacta"></table>
+  <table id="tabelaEquipesCompacta"></table>
+
 </div>
+
 </main>
 
 <div id="footer"></div>
 
 <script src="components/header.js"></script>
 <script src="components/footer.js"></script>
+<script src="components/seasonTitle.js"></script>
 <script src="scripts/script_csa.js"></script>
 </body>
 
