@@ -1319,8 +1319,8 @@ color: #fff;
 }
 
 .history-table tbody tr:hover{
-  background:#555;
-  color: white;
+  background-color: #f1f1f1;
+  color: black;
 }
 
 /* ===========================
@@ -1597,7 +1597,125 @@ color: #fff;
 
 }
 
+/* RESULTADOS PAGE*/ 
+.etapa-cell{
+  display:flex;
+  gap:8px;
+}
+
+.flag-small{
+  width:20px;
+  border-radius:3px;
+}
+
+.results-table tbody td:nth-child(7),
+.results-table tbody td:nth-child(9){
+border-right: none;
+}
+
+.results-table tbody td{
+border-right: 1px solid rgba(0,0,0,0.08);
+}
+
+.results-table tbody td:nth-child(2),
+.results-table tbody td:nth-child(3){
+  text-align:left;
+}
+
+.results-table tbody td{
+  font-size:14px;
+  text-align: center;
+}
+
+.extra-td {
+  background: #00000014;
+}
+
+.extra-positions,
+.extra-dnf{
+  word-spacing:3px;
+  
+}
+
+.pos-label{
+  font-weight:700;
+  font-size:12px;
+  margin-right:4px;
+}
+
+.pos-label.dnf{
+  color:#c0392b;
+}
+
+.dnf-entry{
+  color:#c0392b;
+}
+
+.extra-positions{
+  display:flex;
+  flex-wrap:wrap;
+  
+}
+
+.extra-driver{
+  padding:0 10px;
+  border-right:1px solid #000000;
+  margin:3px 0;
+  
+}
+
+.extra-driver:last-child{
+  border-right:none;
+}
 
 
+.race-extra {
+  padding:4px 0px;   /* antes era ~12px */
+  line-height:1px;
+  font-size: 10px;
+}
+
+.race-extra-row td{
+  padding:0px 40px;
+}
+
+.race-extra-row img{
+  width: 22px;
+  height: 22px;
+}
+
+.race-pending{
+text-align:center;
+font-weight:600;
+color:#00000063;
+letter-spacing:10px;
+}
+
+.extra-positions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+}
 
 
+.expand-cell{
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.expand-icon{
+  display:inline-block;
+  width:6px;
+  height:6px;
+  margin-right:8px;
+
+  border-right:2px solid #777;
+  border-bottom:2px solid #777;
+
+  transform:rotate(-45deg);
+  transition:transform .2s ease;
+}
+
+.race-row:hover .expand-icon{
+  border-color:#ffffff;
+}

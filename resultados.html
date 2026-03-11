@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title></title>
+  <script src="components/title.js"></script>
+  <link rel="stylesheet" href="style/base.css">
+
+</head>
+<body>
+
+<div id="header"></div>
+
+<main class="results-page">
+
+  <h1>Resultados da temporada</h1>
+
+  <table class="history-table results-table">
+    <thead>
+      <tr>
+        <th>Etapa</th> <!-- Preenchido com dados da linha 2 -->
+        <th>GP</th> <!-- Preenchido com dados da linha  82 -->
+        <th>Tipo</th> <!-- Preenchido com dados da linha  1, porém uma validação para transformar em Corrida ou Sprint -->
+
+        <th>🏆 Vencedor</th> <!-- Preenchido com dados da linha 4 -->
+        <th>🥈 2° Lugar</th> <!-- Preenchido com dados da linha 5 -->
+        <th>🥉 3° Lugar</th> <!-- Preenchido com dados da linha 6 -->
+        <th colspan="2">Pole</th> <!-- Preenchido com dados da linha  27 + 32-->
+        <th colspan="2">⚡ Volta Rápida</th> <!-- Preenchido com dados da linha 26 + 31 -->
+        <th>⭐ Piloto do Dia</th> <!-- Preenchido com dados da linha 28  -->
+        <th>🤝 Pilotagem mais limpa</th>  <!-- Preenchido com dados da linha 29  -->
+        <th>🚀 Mais ultrapassagens</th>  <!-- Preenchido com dados da linha 30  -->
+      </tr>
+    </thead>
+
+    <tbody id="resultsBody"></tbody>
+  </table>
+
+</main>
+
+<div id="footer"></div>
+
+<script src="components/header.js"></script>
+<script src="components/footer.js"></script>
+<script src="scripts/script_csa.js"></script>
+<script src="scripts/tracks-data.js"></script>
+</body>
+</html>
